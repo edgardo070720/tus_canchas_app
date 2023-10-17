@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TextFieldLogin extends StatelessWidget {
-  const TextFieldLogin({
+class TextFieldLoginRegister extends StatelessWidget {
+  const TextFieldLoginRegister({
     super.key,
     required this.text_controller,required this.text, required this.password
   });

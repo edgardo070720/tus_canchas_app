@@ -25,7 +25,7 @@ class Login extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
-              color: Colors.white24,
+              color:const Color.fromARGB(56, 255, 255, 255),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -45,18 +45,18 @@ class Login extends StatelessWidget {
                         )
                       ],
                     ),
-                    TextFieldLogin(
+                    TextFieldLoginRegister(
                         text_controller: user_text_controller,
                         text: 'Usuario',
                         password: false),
-                    TextFieldLogin(
+                    TextFieldLoginRegister(
                       text_controller: password_text_controller,
                       text: 'Contraseña',
                       password: true,
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.86,
-                      height: MediaQuery.of(context).size.height * 0.05,
+                      height: MediaQuery.of(context).size.height * 0.057,
                       child: ElevatedButton(
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(
