@@ -45,11 +45,11 @@ class Login extends StatelessWidget {
                         )
                       ],
                     ),
-                    TextFieldLogin(
+                    TextFieldLoginRegister(
                         text_controller: user_text_controller,
                         text: 'Usuario',
                         password: false),
-                    TextFieldLogin(
+                    TextFieldLoginRegister(
                       text_controller: password_text_controller,
                       text: 'Contraseña',
                       password: true,
