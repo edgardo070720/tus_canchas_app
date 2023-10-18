@@ -7,18 +7,20 @@ class Pay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(
-          16.0), // Puedes ajustar el valor de padding según tus necesidades
-      child: Column(
-        children: [
-          Payments(),
-          Padding(
-            padding: EdgeInsets.only(
-                top: 16.0), // Ajusta el valor de top según tus necesidades
-            child: FormPay(),
-          ),
-        ],
+    return const Scaffold(
+      body: Padding(
+        padding: EdgeInsets.all(
+            16.0), // Puedes ajustar el valor de padding según tus necesidades
+        child: Column(
+          children: [
+            Payments(),
+            Padding(
+              padding: EdgeInsets.only(
+                  top: 16.0), // Ajusta el valor de top según tus necesidades
+              child: FormPay(),
+            ),
+          ],
+        ),
       ),
     );
   }
