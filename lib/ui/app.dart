@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'pages/auth/login.dart';
 
+import 'pages/auth/login.dart';
+import 'pages/booking/bookings.dart';
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -10,9 +11,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       theme: ThemeData(primarySwatch: Colors.grey,useMaterial3: true ),
-      home:const Login(),
+      initialRoute: "/user_register",
       routes: {
         "/login":(context) => const Login(),
+        "/user_register":(context) => const RegisterUser(),
+
+        "/payments":(context)=>const Pay(),
+        "/bookings": (context) => const Booking(),
       },
     );
   }
