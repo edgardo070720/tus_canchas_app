@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tus_canchas_app/ui/pages/auth/register.dart';
+import 'package:tus_canchas_app/ui/pages/pay/pay.dart';
 
 import 'pages/auth/login.dart';
 import 'pages/booking/bookings.dart';
