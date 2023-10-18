@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tus_canchas_app/ui/pages/auth/register.dart';
 
+import 'package:tus_canchas_app/ui/pages/pay/pay.dart';
 import 'pages/auth/login.dart';
-
+import 'pages/booking/bookings.dart';
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
         "/login":(context) => const Login(),
         "/user_register":(context) => const RegisterUser(),
 
+        "/payments":(context)=>const Pay(),
+        "/bookings": (context) => const Booking(),
       },
     );
   }
