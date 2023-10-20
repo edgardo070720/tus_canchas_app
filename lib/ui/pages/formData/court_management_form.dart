@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class CourtManagementForm extends StatelessWidget {
@@ -6,37 +5,37 @@ class CourtManagementForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Scaffold(
+        body: SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-                  padding: const EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  child:const Center(
-  
-                    child:  Text(
-                      'Gestión de Canchas',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24.0,
-                      ),
-                    ),
+              padding: const EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              child: const Center(
+                child: Text(
+                  'Gestión de Canchas',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24.0,
                   ),
                 ),
+              ),
+            ),
             // Section 'Datos de la Cancha',
-           const SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             const UserInfoForm(),
-           const SizedBox(height: 50.0),
+            const SizedBox(height: 50.0),
             // Section 'Infomacion adicional'
-           const SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             const CompanyInfoForm(),
-           const SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -47,7 +46,7 @@ class CourtManagementForm extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 }
 
@@ -65,8 +64,7 @@ class UserInfoForm extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildCenteredTitle(
-              'Datos de la Cancha'), 
+          _buildCenteredTitle('Datos de la Cancha'),
           const SizedBox(height: 20.0),
           Row(
             children: [
@@ -173,7 +171,8 @@ class CompanyInfoForm extends StatelessWidget {
           _buildCenteredTitle('Informacion Adicional'),
           const SizedBox(height: 20.0),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start, // Para ocupar el espacio vertical.
+            crossAxisAlignment:
+                CrossAxisAlignment.start, // Para ocupar el espacio vertical.
             children: [
               Expanded(
                 child: Column(
@@ -237,7 +236,6 @@ class CompanyInfoForm extends StatelessWidget {
                 ),
               ),
             ),
-            
             IconButton(
               icon: const Icon(Icons.folder),
               onPressed: () {
@@ -251,13 +249,13 @@ class CompanyInfoForm extends StatelessWidget {
   }
 }
 
-
 class ActionButton extends StatelessWidget {
   final String label;
   final Color color;
   final VoidCallback onPressed;
 
-  const ActionButton({super.key, 
+  const ActionButton({
+    super.key,
     required this.label,
     required this.color,
     this.onPressed = _defaultCallback,

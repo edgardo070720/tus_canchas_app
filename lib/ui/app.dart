@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:tus_canchas_app/ui/pages/auth/register.dart';
 import 'package:tus_canchas_app/ui/pages/home/home.dart';
 import 'package:tus_canchas_app/ui/pages/pay/pay.dart';
-
+import 'package:tus_canchas_app/ui/pages/formData/court_management_form.dart';
+import 'package:tus_canchas_app/ui/pages/formData/user_management_form.dart';
 import 'pages/auth/login.dart';
 import 'pages/booking/bookings.dart';
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -13,16 +15,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      theme: ThemeData(primarySwatch: Colors.grey,useMaterial3: true ),
+      theme: ThemeData(primarySwatch: Colors.grey, useMaterial3: true),
       initialRoute: "/home",
       routes: {
-        "/login":(context) => const Login(),
-        "/user_register":(context) => const RegisterUser(),
-
-        "/payments":(context)=>const Pay(),
+        "/login": (context) => const Login(),
+        "/user_register": (context) => const RegisterUser(),
+        "/cancha": (context) => const CourtManagementForm(),
+        "/payments": (context) => const Pay(),
+        "/usuarios": (context) => const UserManagementForm(),
         "/bookings": (context) => const Booking(),
-        "/home":(context) => const Home(),
-        
+        "/home": (context) => const Home(),
       },
     );
   }
