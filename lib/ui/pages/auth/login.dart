@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'widgets_login.dart';
 
@@ -77,7 +78,9 @@ class Login extends StatelessWidget {
                           const Text('¿No estas registrado?',
                               style: TextStyle(color: Colors.white)),
                           GestureDetector(
-                              onDoubleTap: () {},
+                              onTap: () {
+                                Get.toNamed('/user_register');
+                              },
                               child: const Text(
                                 'Registrarse',
                                 style: TextStyle(
@@ -89,7 +92,10 @@ class Login extends StatelessWidget {
                   ],
                 ),
               ),
-            )
+            ),
+            IconButton(onPressed: (){
+              Get.toNamed('/home');
+            }, icon: const Icon(Icons.home),color: Colors.white,),
           ],
         ),
       ),

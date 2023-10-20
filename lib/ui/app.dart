@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tus_canchas_app/ui/pages/auth/register.dart';
 import 'package:tus_canchas_app/ui/pages/home/home.dart';
 import 'package:tus_canchas_app/ui/pages/pay/pay.dart';
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       theme: ThemeData(primarySwatch: Colors.grey,useMaterial3: true ),
@@ -18,7 +19,6 @@ class MyApp extends StatelessWidget {
       routes: {
         "/login":(context) => const Login(),
         "/user_register":(context) => const RegisterUser(),
-
         "/payments":(context)=>const Pay(),
         "/bookings": (context) => const Booking(),
         "/home":(context) => const Home(),

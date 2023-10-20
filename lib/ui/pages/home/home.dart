@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
-
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+  bool session_state=false;
   int selected_option = 0;
   List<bool> list_state_favorite = List.filled(20, false);
   List<String> options = ['Futbol', 'Futbol Sala', 'Basketball', 'Tennis'];
@@ -147,30 +148,6 @@ class _HomeState extends State<Home> {
               },
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              width: MediaQuery.of(context).size.width * 0.95,
-              height: MediaQuery.of(context).size.height * 0.04,
-              decoration: BoxDecoration(
-                  color: Colors.black, borderRadius: BorderRadius.circular(5)),
-              child: const Column(
-                children: [
-                  Text(
-                    'Encuentra tu pasion con el deporte',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'Tenemos las canchas deportivas con mas reservas, para que le eches ojo...',
-                    style: TextStyle(color: Colors.white, fontSize: 10),
-                  ),
-                ],
-              ),
-            ),
-          )
         ],
       ),
       bottomNavigationBar: Padding(
@@ -251,33 +228,38 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 ListTile(
+                  onTap: () {},
                   title: const Text('Canchas'),
                   leading: const Icon(Icons.sports_soccer_outlined),
                 ),
                 Visibility(
-                  visible: true,
+                  visible: session_state,
                   child: ListTile(
+                    onTap: () {},
                     title: const Text('Editar Iformación'),
                     leading: const Icon(Icons.person),
                   ),
                 ),
                 Visibility(
-                  visible: true,
+                  visible: session_state,
                   child: ListTile(
+                    onTap: () {},
                     title: const Text('Gestion Reservas'),
                     leading: const Icon(Icons.edit),
                   ),
                 ),
                 Visibility(
-                  visible: true,
+                  visible: session_state,
                   child: ListTile(
+                    onTap: () {},
                     title: const Text('Gestion Canchas'),
                     leading: const Icon(Icons.add_circle),
                   ),
                 ),
                 Visibility(
-                  visible: true,
+                  visible: session_state,
                   child: ListTile(
+                    onTap: () {},
                     title: const Text('Gestion Quejas'),
                     leading: const Icon(Icons.announcement_rounded),
                   ),
@@ -285,16 +267,34 @@ class _HomeState extends State<Home> {
               ],
             ),
             Container(
-              color: Color.fromARGB(255, 94, 23, 235),
+              color: const Color.fromARGB(255, 94, 23, 235),
               child: ListTile(
-                title: const Text(
-                  'Cerrar Sesión',
-                  style: TextStyle(color: Colors.white),
-                ),
-                leading: const Icon(
-                  Icons.logout,
-                  color: Colors.white,
-                ),
+                onTap: () {
+                  setState(() {
+                    (session_state == false)
+                        ? session_state = true
+                        : session_state = false;
+                  });
+                  Get.toNamed('/login');
+                },
+                title: (session_state == false)
+                    ? const Text(
+                        'Iniciar Sesión',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    : const Text(
+                        'Cerrar Sesión',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                leading: (session_state == false)
+                    ? const Icon(
+                        Icons.login_rounded,
+                        color: Colors.white,
+                      )
+                    : const Icon(
+                        Icons.logout_rounded,
+                        color: Colors.white,
+                      ),
               ),
             )
           ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tus_canchas_app/ui/pages/auth/widgets_login.dart';
 
 class RegisterUser extends StatefulWidget {
@@ -32,10 +33,12 @@ class _RegisterUserState extends State<RegisterUser> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Scaffold(
+          
           backgroundColor: Colors.transparent,
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
@@ -131,7 +134,9 @@ class _RegisterUserState extends State<RegisterUser> {
                             const Text('¿Ya estas Registrado?',
                                 style: TextStyle(color: Colors.white)),
                             GestureDetector(
-                                onDoubleTap: () {},
+                                onTap: () {
+                                  Get.toNamed('/login');
+                                },
                                 child: const Text(
                                   'Iniciar Sesión',
                                   style: TextStyle(
@@ -143,7 +148,10 @@ class _RegisterUserState extends State<RegisterUser> {
                     ],
                   ),
                 ),
-              )
+              ),
+              IconButton(onPressed: (){
+                Get.toNamed('/home');
+              }, icon: const Icon(Icons.home),color: Colors.white,),
             ],
           ),
         ),
