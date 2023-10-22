@@ -19,17 +19,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.grey, useMaterial3: true),
       initialRoute: "/home",
       routes: {
-<<<<<<< HEAD
         "/login":(context) => const Login(),
         "/user_register":(context) => const RegisterUser(),
         "/payments":(context)=>const Pay(),
-=======
-        "/login": (context) => const Login(),
-        "/user_register": (context) => const RegisterUser(),
-        "/cancha": (context) => const CourtManagementForm(),
-        "/payments": (context) => const Pay(),
-        "/usuarios": (context) => const UserManagementForm(),
->>>>>>> dd1ad183b4b7f51f7ad5db366e1787ac7fe87279
         "/bookings": (context) => const Booking(),
         "/home": (context) => const Home(),
       },
