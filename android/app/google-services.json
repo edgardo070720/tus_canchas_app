@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "700589006061",
+    "project_id": "bd-prueba-3aac5",
+    "storage_bucket": "bd-prueba-3aac5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700589006061:android:174c6e78910e128d9e40e4",
+        "android_client_info": {
+          "package_name": "com.example.tus_canchas_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsjKRhBtY3m0njTk_KT9qP0-7Os6rKrRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

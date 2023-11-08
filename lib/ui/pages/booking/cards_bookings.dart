@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CardsBooking extends StatelessWidget {
   final String imagePath;
-
-  const CardsBooking({
-    Key? key,
-    required this.imagePath,
-  }) : super(key: key);
+  final String nombre;
+  final String textButton;
+  final String textButton2;
+  final double valor;
+  const CardsBooking(
+      {Key? key,
+      required this.imagePath,
+      required this.nombre,
+      required this.textButton,
+      required this.valor,
+      required this.textButton2})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -46,7 +54,6 @@ class CardsBooking extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
                           imagePath,
-                         
 
                           width:
                               400, // Puedes ajustar esto según tus necesidades
@@ -55,15 +62,15 @@ class CardsBooking extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "60.00 COP",
-                          style: TextStyle(
+                          '${valor.toString()} COP',
+                          style: const TextStyle(
                               fontSize: 17, fontWeight: FontWeight.bold),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.date_range,
                           color: Color(0xFF5E17EB),
                           size: 26,
@@ -71,10 +78,10 @@ class CardsBooking extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 4),
-                    const Text(
-                      "cancha de futbol",
-                      style:
-                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    Text(
+                      nombre,
+                      style: const TextStyle(
+                          fontSize: 13, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
                       height: 12,
@@ -90,8 +97,8 @@ class CardsBooking extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                             ),
                             onPressed: () {},
-                            child: const Text("cancelar",
-                                style: TextStyle(color: Colors.white))),
+                            child: Text(textButton,
+                                style: const TextStyle(color: Colors.white))),
                         MaterialButton(
                             color: const Color(0xFF009A50),
                             height: 30,
@@ -99,9 +106,13 @@ class CardsBooking extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            onPressed: () {},
-                            child: const Text("pagar",
-                                style: TextStyle(
+                            onPressed: () {
+                              textButton2 == "editar"
+                                  ? Get.toNamed("/court")
+                                  : Get.toNamed("page");
+                            },
+                            child: Text(textButton2,
+                                style: const TextStyle(
                                   color: Colors.white,
                                 ))),
                       ],

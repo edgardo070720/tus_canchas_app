@@ -7,8 +7,9 @@ class Pay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Padding(
+    return Scaffold(
+      appBar: AppBar(title: const Text("Reservar")),
+      body: const Padding(
         padding: EdgeInsets.all(
             16.0), // Puedes ajustar el valor de padding según tus necesidades
         child: Column(

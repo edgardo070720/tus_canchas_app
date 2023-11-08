@@ -8,7 +8,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  bool session_state=false;
+  bool session_state = false;
   int selected_option = 0;
   List<bool> list_state_favorite = List.filled(20, false);
   List<String> options = ['Futbol', 'Futbol Sala', 'Basketball', 'Tennis'];
@@ -30,10 +30,15 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Icon(Icons.sports_soccer, size: 35),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.toNamed("/bookings");
+            },
+            icon: const Icon(
+              Icons.sports_soccer,
+              size: 35,
+            ),
           )
         ],
       ),
@@ -120,6 +125,7 @@ class _HomeState extends State<Home> {
                           const Text('\$ 50.000 COP'),
                           IconButton(
                               onPressed: () {
+                                Get.toNamed("/payments");
                                 setState(() {
                                   (list_state_favorite[index] == false)
                                       ? list_state_favorite[index] = true
@@ -228,7 +234,9 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed("/home");
+                  },
                   title: const Text('Canchas'),
                   leading: const Icon(Icons.sports_soccer_outlined),
                 ),
@@ -241,7 +249,6 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Visibility(
-                  visible: session_state,
                   child: ListTile(
                     onTap: () {},
                     title: const Text('Gestion Reservas'),
@@ -249,15 +256,27 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Visibility(
-                  visible: session_state,
+                  // visible: session_state,
                   child: ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed("/court");
+                    },
+                    title: const Text('Registrar Canchas'),
+                    leading: const Icon(Icons.add_circle),
+                  ),
+                ),
+                Visibility(
+                  // visible: session_state,
+                  child: ListTile(
+                    onTap: () {
+                      Get.toNamed("/prueba");
+                    },
                     title: const Text('Gestion Canchas'),
                     leading: const Icon(Icons.add_circle),
                   ),
                 ),
                 Visibility(
-                  visible: session_state,
+                  // visible: session_state,
                   child: ListTile(
                     onTap: () {},
                     title: const Text('Gestion Quejas'),

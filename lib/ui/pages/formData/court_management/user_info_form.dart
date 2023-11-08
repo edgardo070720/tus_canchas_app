@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tus_canchas_app/data/services/firebase_service.dart';
+import 'package:tus_canchas_app/ui/pages/formData/court_management/data_picker.dart';
 import './ui_helpers.dart';
 
 class UserInfoForm extends StatefulWidget {
@@ -9,9 +11,21 @@ class UserInfoForm extends StatefulWidget {
 }
 
 class _UserInfoFormState extends State<UserInfoForm> {
-List<String> tiposDeCancha = ['Fútbol', 'Fútbol sala', 'Baloncesto', 'Tenis'];
+  List<String> tiposDeCancha = [];
   String? selectedTipoDeCancha;
   // TextEditingController tipoDeCanchaController = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    loadTiposDeCanchaFromFirestore();
+  }
+
+  Future<void> loadTiposDeCanchaFromFirestore() async {
+    final tiposDeCanchaFromFirestore = await getTipos();
+    setState(() {
+      tiposDeCancha = tiposDeCanchaFromFirestore;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +46,7 @@ List<String> tiposDeCancha = ['Fútbol', 'Fútbol sala', 'Baloncesto', 'Tenis'];
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                  const Text('Tipo de Cancha'),
-                   DropdownButton<String>(
+                    DropdownButton<String>(
                       isExpanded: true,
                       value: selectedTipoDeCancha,
                       onChanged: (String? newValue) {
@@ -76,15 +89,7 @@ List<String> tiposDeCancha = ['Fútbol', 'Fútbol sala', 'Baloncesto', 'Tenis'];
                 ),
               ),
               const SizedBox(width: 20.0),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text('Horas Disponible'),
-                    buildTextField(),
-                  ],
-                ),
-              ),
+              const Expanded(child: TextScreen()),
             ],
           ),
           Row(

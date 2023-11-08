@@ -6,7 +6,7 @@ class Payments extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 360, // Ajusta la altura del SizedBox según tus necesidades
+      height: 300, // Ajusta la altura del SizedBox según tus necesidades
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
@@ -19,7 +19,7 @@ class Payments extends StatelessWidget {
           children: <Widget>[
             Image.asset(
               "../../../../assets/images/bookings/cancha.jpg",
-              height: 150,
+              height: 120,
               width: double.infinity,
               fit: BoxFit.cover,
             ),
@@ -31,12 +31,9 @@ class Payments extends StatelessWidget {
                   Text(
                     "50.0000 COP",
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
-                  ),
-                  SizedBox(
-                    height: 10,
                   ),
                   Text(
                     "Descripcion:",
@@ -50,9 +47,6 @@ class Payments extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15,
                     ),
-                  ),
-                  SizedBox(
-                    height: 10,
                   ),
                   Text(
                     "Ubicación:",

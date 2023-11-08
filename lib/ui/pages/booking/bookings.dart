@@ -8,6 +8,9 @@ class Booking extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("reservas"),
+      ),
       body: Container(
         padding: const EdgeInsets.only(top: 15),
         decoration: const BoxDecoration(
@@ -90,11 +93,19 @@ class Booking extends StatelessWidget {
               child: Row(
                 children: [
                   CardsBooking(
+                    valor: 90000,
+                    textButton: "cancelar",
+                    textButton2: "pagar",
                     imagePath: "../../../../assets/images/bookings/cancha.jpg",
+                    nombre: "donde lucho",
                   ),
                   CardsBooking(
+                    valor: 90000,
+                    textButton: "cancelar",
+                    textButton2: "pagar",
                     imagePath:
                         "../../../../assets/images/bookings/cancha2.jpeg",
+                    nombre: "donde lucho",
                   ),
                 ],
               ),
@@ -104,25 +115,19 @@ class Booking extends StatelessWidget {
               child: Row(
                 children: [
                   CardsBooking(
+                    valor: 90000,
+                    textButton: "cancelar",
+                    textButton2: "pagar",
                     imagePath: "../../../../assets/images/bookings/cancha.jpg",
+                    nombre: "donde lucho",
                   ),
                   CardsBooking(
+                    valor: 90000,
+                    textButton: "cancelar",
+                    textButton2: "pagar",
                     imagePath:
                         "../../../../assets/images/bookings/cancha2.jpeg",
-                  ),
-                ],
-              ),
-            ),
-            const SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  CardsBooking(
-                    imagePath: "../../../../assets/images/bookings/cancha.jpg",
-                  ),
-                  CardsBooking(
-                    imagePath:
-                        "../../../../assets/images/bookings/cancha2.jpeg",
+                    nombre: "donde lucho",
                   ),
                 ],
               ),

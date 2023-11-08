@@ -3,7 +3,6 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import './ui_helpers.dart';
 
-
 class CompanyInfoForm extends StatefulWidget {
   const CompanyInfoForm({super.key});
 
@@ -24,7 +23,8 @@ class _CompanyInfoFormState extends State<CompanyInfoForm> {
 
     // Ahora puedes hacer lo que quieras con el archivo, como mostrarlo en un ImageView o cargarlo en algún otro lugar.
   }
-Widget _buildFileInput(String label) {
+
+  Widget _buildFileInput(String label) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -52,16 +52,17 @@ Widget _buildFileInput(String label) {
               },
             ),
             IconButton(
-            icon: const Icon(Icons.camera),
-            onPressed: () {
-              _takePicture(); // Llama a la función para tomar una foto.
-            },
-          ),
+              icon: const Icon(Icons.camera),
+              onPressed: () {
+                _takePicture(); // Llama a la función para tomar una foto.
+              },
+            ),
           ],
         ),
       ],
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -120,6 +121,5 @@ Widget _buildFileInput(String label) {
         ],
       ),
     );
-    
   }
 }
