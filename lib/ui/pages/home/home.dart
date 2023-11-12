@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tus_canchas_app/data/services/firebase_service.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -8,10 +9,21 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+   @override
+    void initState() {
+    super.initState();
+    loadTiposDeCanchaFromFirestore();
+  }
+  List<String> tiposDeCancha = [];
+    Future<void> loadTiposDeCanchaFromFirestore() async {
+    final tiposDeCanchaFromFirestore = await getTipos();
+    setState(() {
+      tiposDeCancha = tiposDeCanchaFromFirestore;
+    });
+  }
   bool session_state = false;
   int selected_option = 0;
   List<bool> list_state_favorite = List.filled(20, false);
-  List<String> options = ['Futbol', 'Futbol Sala', 'Basketball', 'Tennis'];
   int selected_navigation = 0;
   @override
   Widget build(BuildContext context) {
@@ -70,7 +82,7 @@ class _HomeState extends State<Home> {
               height: MediaQuery.of(context).size.height * 0.04,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: options.length,
+                itemCount: tiposDeCancha.length,
                 itemBuilder: (context, int index) {
                   return InkWell(
                     onTap: () {
@@ -79,7 +91,7 @@ class _HomeState extends State<Home> {
                       });
                     },
                     child: Text(
-                      '${options[index]}  ',
+                      '${tiposDeCancha[index]}  ',
                       style: TextStyle(
                           fontSize: 20,
                           decoration: (selected_option == index)
